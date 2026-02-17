@@ -6,6 +6,8 @@
 Infrastructure should "report itself". By using **AWS KMS** and **Python**, we've created a system where unauthorized access attempts don't just fail—they trigger immediate escalation to the management layer via **SNS**.
 
 ## 🛰️ Architectural Flow
+
+```mermaid
 graph LR
     User((Actor)) -->|1. Unauthorized Decrypt| Vault[Ghost Vault Script]
     Vault -->|2. Logic Trigger| KMS{AWS KMS}
@@ -13,6 +15,7 @@ graph LR
     Vault -->|4. Active Defense| SNS[AWS SNS]
     SNS -->|5. Real-time Alert| Exec((Executive Email))
     style SNS fill:#f96,stroke:#333,stroke-width:2px
+```
 
 ## 🛠️ Technical Stack
 * **Language**: Python 3.x
