@@ -29,6 +29,8 @@ The system is tested against real-world intrusion simulations. When the "tripwir
 ### 1. Terminal Reaction
 The script identifies the `InvalidCiphertextException` and immediately dispatches the tactical alert.
 
+![Terminal Log](./decryption-denied.png)
+
 ### 2. Executive Notification
 The "Secret Indicator" reaches the mailbox in seconds, bypassing traditional SOC bottlenecks.
 
