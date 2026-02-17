@@ -33,8 +33,8 @@ The script identifies the `InvalidCiphertextException` and immediately dispatche
 
 ### 2. Executive Notification
 The "Secret Indicator" reaches the mailbox in seconds, bypassing traditional SOC bottlenecks.
-![Executive Alert Notification](./aws-notification.png)
 
+![Executive Alert Notification](./aws-notification.png)
 *(Actual alert received during a simulated intrusion attempt)*
 
 ## 💎 Business Value
