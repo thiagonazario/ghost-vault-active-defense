@@ -39,7 +39,7 @@ To maintain security standards, sensitive ARNs are handled via environment varia
 
 ### 1. Set Environment Variables
 ```bash
-export GHOST_SNS_TOPIC_ARN='arn:aws:sns:us-east-1:072134156302:Ghost-Sovereign-Alerts'
+export GHOST_SNS_TOPIC_ARN='arn:aws:sns:region:account-id:topic-name'
 export GHOST_KMS_ALIAS='alias/ghost-protocol-key'
 ```
 
