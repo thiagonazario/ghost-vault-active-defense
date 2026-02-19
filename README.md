@@ -6,6 +6,8 @@
 Infrastructure should "report itself". By using **AWS KMS** and **Python**, we've created a system where unauthorized access attempts don't just fail—they trigger immediate escalation to the management layer via **SNS**.
 
 ## 🛰️ Architectural Flow
+
+```mermaid
 graph LR
     User((Actor)) -->|1. Unauthorized Decrypt| Vault[Ghost Vault Script]
     Vault -->|2. Logic Trigger| KMS{AWS KMS}
@@ -13,6 +15,7 @@ graph LR
     Vault -->|4. Active Defense| SNS[AWS SNS]
     SNS -->|5. Real-time Alert| Exec((Executive Email))
     style SNS fill:#f96,stroke:#333,stroke-width:2px
+```
 
 ## 🛠️ Technical Stack
 * **Language**: Python 3.x
@@ -26,8 +29,14 @@ The system is tested against real-world intrusion simulations. When the "tripwir
 ### 1. Terminal Reaction
 The script identifies the `InvalidCiphertextException` and immediately dispatches the tactical alert.
 
+![Terminal Log](./decryption-denied.png)
+
 ### 2. Executive Notification
 The "Secret Indicator" reaches the mailbox in seconds, bypassing traditional SOC bottlenecks.
+
+![Executive Alert Notification](./aws-notification.png)
+
+*(Actual alert received during a simulated intrusion attempt)*
 
 ## 💎 Business Value
 * **Instant Awareness**: Zero latency between breach attempt and executive notification.
